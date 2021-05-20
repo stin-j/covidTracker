@@ -1,5 +1,5 @@
 # covidTracker
-WHAT THIS PROJECT IS
+INSTRUCTIONS/GUIDELINES
 ====================
 APCS End-of-Year Project (COVID-19 Edition)
 
