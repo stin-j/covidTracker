@@ -1,4 +1,4 @@
-# minesweeper
+# covidTracker
 WHAT THIS PROJECT IS
 ====================
 APCS End-of-Year Project (COVID-19 Edition)
