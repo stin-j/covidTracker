@@ -33,9 +33,12 @@ public class readData {
             } //I'm only using one site's API so the response code should be the same for all links
             
             else {
-                JSONObject data_all = dataInput(all);
-                readAll objAll = new readAll(data_all);
+                JSONObject data_all = dataInputObject(all);
+                dataAll objAll = new dataAll(data_all);
                 objAll.printTotals(); 
+                JSONArray data_states = dataInputArray(states);
+                dataStates objStates = new dataStates(data_states);
+                objStates.printTotals();
             }
 
         } catch (Exception e) {
@@ -43,7 +46,7 @@ public class readData {
         }
 	}
 	
-	public static JSONObject dataInput(URL url) throws IOException, ParseException { //everything inside the link to a JSON Object yay
+	public static JSONObject dataInputObject(URL url) throws IOException, ParseException { //everything inside the link to a JSON Object yay
 		JSONParser parse = new JSONParser();
 		String file = "";
 		Scanner scanner = new Scanner(url.openStream());
@@ -54,5 +57,17 @@ public class readData {
         JSONObject data = (JSONObject) parse.parse(file);
         return data;
 	}
+	public static JSONArray dataInputArray(URL url) throws IOException, ParseException {
+		JSONParser parser = new JSONParser();
+		String file = "";
+		Scanner scanner = new Scanner(url.openStream());
+        while (scanner.hasNext()) {
+            file += scanner.next();
+        }
+        scanner.close();
+		JSONObject obj  =  (JSONObject) parser.parse(file);
+		JSONArray array = new JSONArray();
+		array.add(obj);
+		return (JSONArray)array;
+	}
 }
-
