@@ -7,3 +7,6 @@ https://corona.lmao.ninja/
 https://api.caw.sh/docs/#/
 https://covidactnow.org/data-api
 https://postman-toolboxes.github.io/covid-19/#featured-collections
+
+5/20
+(Justin) Made the code object oriented (WIP) and added a new method in main to convert the data in the link directly to a JSON Object.
