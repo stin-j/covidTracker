@@ -1,6 +1,6 @@
 # covidTracker
-INSTRUCTIONS/GUIDELINES
-====================
+#INSTRUCTIONS/GUIDELINES
+
 APCS End-of-Year Project (COVID-19 Edition)
 
 This project is not meant to be a review or summary. Rather, it is an opportunity to explore and
