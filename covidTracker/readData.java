@@ -39,6 +39,12 @@ public class readData {
                 JSONArray data_states = dataInputArray(states);
                 dataStates objStates = new dataStates(data_states);
                 objStates.printTotals();
+                JSONArray data_continents = dataInputArray(continent);
+                dataContinents objContinent = new dataContinents(data_continents);
+                objContinent.printTotals();
+                JSONArray data_countries = dataInputArray(country);
+                dataCountries objCountry = new dataCountries(data_countries);
+                objCountry.printTotals();
             }
 
         } catch (Exception e) {

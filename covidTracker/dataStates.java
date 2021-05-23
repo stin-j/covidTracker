@@ -15,9 +15,9 @@ public class dataStates {
 
 	public void printTotals() {
 		JSONArray jsonArray = (JSONArray) data.get(0);
-		Iterator<String> iterator = jsonArray.iterator();
+		Iterator<JSONObject> iterator = data.iterator();
 		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
+			System.out.println("Cases: " + iterator.next().get("cases"));
 		}
 	}
 }
