@@ -26,4 +26,5 @@ failed attempt to fix the error
 moved all files into src folder for better filepathing
 
 5/26
-(Alvin) fixed the ClassCastException in the readData file, also reformatted the output in the dataStates, dataContinents, and dataCountries classes
+(Alvin) fixed the ClassCastException in the readData file now the code runs successfully
+Reformatted the output in the dataStates, dataContinents, and dataCountries classes
