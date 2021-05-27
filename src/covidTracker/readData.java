@@ -9,14 +9,26 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class readData {
-
+public class readData extends JFrame{
+	private JLabel status;
+	public readData() {
+    	status = new JLabel("");
+        add(status, BorderLayout.SOUTH);
+        add(new dataDisplay(status));
+        setResizable(false);
+        pack();
+        setTitle("COVID-19 Tracker");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 	public static void main(String[] args) throws IOException {
 		try {
             URL all = new URL("https://disease.sh/v3/covid-19/all");
@@ -36,20 +48,16 @@ public class readData {
                 JSONObject data_all = dataInputObject(all);
                 dataAll objAll = new dataAll(data_all);
                 objAll.printTotals(); 
-                JSONArray data_states = dataInputArray(states);
-                dataStates objStates = new dataStates(data_states);
-                objStates.printTotals();
-                JSONArray data_continents = dataInputArray(continent);
-                dataContinents objContinent = new dataContinents(data_continents);
-                objContinent.printTotals();
-                JSONArray data_countries = dataInputArray(country);
-                dataCountries objCountry = new dataCountries(data_countries);
-                objCountry.printTotals();
+//                JSONArray data_states = dataInputArray(states);
+//                dataStates objStates = new dataStates(data_states);
+//                objStates.printTotals();
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+		readData ct = new readData();
+		ct.setVisible(true);
 	}
 	
 	public static JSONObject dataInputObject(URL url) throws IOException, ParseException { //everything inside the link to a JSON Object yay
@@ -71,10 +79,9 @@ public class readData {
             file += scanner.next();
         }
         scanner.close();
-		//JSONObject obj  =  (JSONObject) parser.parse(file);
-		//JSONArray array = new JSONArray();
-        JSONArray array = (JSONArray)parser.parse(file);
-		//array.add(obj);
-		return array;
+		JSONObject obj  =  (JSONObject) parser.parse(file);
+		JSONArray array = new JSONArray();
+		array.add(obj);
+		return (JSONArray)array;
 	}
 }
