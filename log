@@ -22,4 +22,5 @@ I will hopefully fix this later.
 failed attempt to fix the error
 
 5/26
-(Justin) Going to try to make a UI (user interface)
+(Justin) made a simple UI (user interface) that doesn't have much on it. you click on it and it gives the coordinates of where you clicked
+moved all files into src folder for better filepathing
