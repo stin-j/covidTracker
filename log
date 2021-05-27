@@ -16,3 +16,10 @@ java.lang.ClassCastException: class org.json.simple.JSONArray cannot be cast to 
 	at covidTracker.readData.main(readData.java:39)
 
 I will hopefully fix this later.
+
+5/22
+(Alvin) added 2 classes dataContinent and dataCountry
+failed attempt to fix the error
+
+5/26
+(Justin) Going to try to make a UI (user interface)
