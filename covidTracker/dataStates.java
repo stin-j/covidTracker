@@ -14,10 +14,13 @@ public class dataStates {
 	}
 
 	public void printTotals() {
-		JSONArray jsonArray = (JSONArray) data.get(0);
+		//JSONArray jsonArray = (JSONArray) data.get(0);
+		System.out.println("Data for states:");
 		Iterator<JSONObject> iterator = data.iterator();
 		while (iterator.hasNext()) {
-			System.out.println("Cases: " + iterator.next().get("cases"));
+			JSONObject state = iterator.next();
+			System.out.println("Cases for " + state.get("state") + ": " + state.get("cases"));
 		}
+		System.out.println();
 	}
 }

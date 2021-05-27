@@ -12,9 +12,11 @@ public class dataCountries {
     }
 
     public void printTotals() {
+        System.out.println("Data for countries:");
         Iterator<JSONObject> iterator = data.iterator();
         while(iterator.hasNext()) {
-            System.out.println("Cases: " + iterator.next().get("cases"));
+            JSONObject country = iterator.next();
+            System.out.println("Cases for " + country.get("country") + ": " + country.get("cases"));
         }
     }
 }

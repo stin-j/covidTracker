@@ -71,9 +71,10 @@ public class readData {
             file += scanner.next();
         }
         scanner.close();
-		JSONObject obj  =  (JSONObject) parser.parse(file);
-		JSONArray array = new JSONArray();
-		array.add(obj);
-		return (JSONArray)array;
+		//JSONObject obj  =  (JSONObject) parser.parse(file);
+		//JSONArray array = new JSONArray();
+        JSONArray array = (JSONArray)parser.parse(file);
+		//array.add(obj);
+		return array;
 	}
 }

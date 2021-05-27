@@ -14,9 +14,12 @@ public class dataContinents {
     }
 
     public void printTotals() {
+        System.out.println("Data for continents:");
         Iterator<JSONObject> iterator = data.iterator();
         while(iterator.hasNext()) {
-            System.out.println("Cases: " + iterator.next().get("cases"));
+            JSONObject continent = iterator.next();
+            System.out.println("Cases for " + continent.get("continent") + ": " + continent.get("cases"));
         }
+        System.out.println();
     }
 }

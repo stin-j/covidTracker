@@ -18,5 +18,6 @@ public class dataAll {
         System.out.println("Total Recovered: "+data.get("cases"));
         System.out.println("New Recoveries Today: "+data.get("todayRecovered"));
         System.out.println("Current Active Cases: "+data.get("active"));
+        System.out.println();
 	}
 }
