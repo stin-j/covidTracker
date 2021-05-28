@@ -28,3 +28,8 @@ moved all files into src folder for better filepathing
 5/26
 (Alvin) fixed the ClassCastException in the readData file now the code runs successfully
 Reformatted the output in the dataStates, dataContinents, and dataCountries classes
+
+5/28
+(Justin) previously, the code just spit out all the data in a long list
+changed code so that user can search for specific data within the API database or type "all" for the long list again
+accounts for invalid inputs
