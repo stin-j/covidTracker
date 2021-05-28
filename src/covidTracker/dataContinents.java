@@ -22,4 +22,14 @@ public class dataContinents {
         }
         System.out.println();
     }
+    public String printContinent(String continentname) {
+		Iterator<JSONObject> iterator = data.iterator();
+		while (iterator.hasNext()) {
+			JSONObject continent = iterator.next();
+			if(continent.get("continent").equals(continentname)) {
+				return("Cases for " + continent.get("continent") + ": " + continent.get("cases"));
+			}
+		}
+		return null;
+	}
 }

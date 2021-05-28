@@ -14,7 +14,6 @@ public class dataStates {
 	}
 
 	public void printTotals() {
-		//JSONArray jsonArray = (JSONArray) data.get(0);
 		System.out.println("Data for states:");
 		Iterator<JSONObject> iterator = data.iterator();
 		while (iterator.hasNext()) {
@@ -22,5 +21,16 @@ public class dataStates {
 			System.out.println("Cases for " + state.get("state") + ": " + state.get("cases"));
 		}
 		System.out.println();
+	}
+	
+	public String printState(String statename) {
+		Iterator<JSONObject> iterator = data.iterator();
+		while (iterator.hasNext()) {
+			JSONObject state = iterator.next();
+			if(state.get("state").equals(statename)) {
+				return("Cases for " + state.get("state") + ": " + state.get("cases"));
+			}
+		}
+		return null;
 	}
 }
