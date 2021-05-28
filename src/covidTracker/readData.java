@@ -47,10 +47,16 @@ public class readData extends JFrame{
             else {
                 JSONObject data_all = dataInputObject(all);
                 dataAll objAll = new dataAll(data_all);
-                objAll.printTotals(); 
-//                JSONArray data_states = dataInputArray(states);
-//                dataStates objStates = new dataStates(data_states);
-//                objStates.printTotals();
+                objAll.printTotals();
+                JSONArray data_states = dataInputArray(states);
+                dataStates objStates = new dataStates(data_states);
+                objStates.printTotals();
+                JSONArray data_continents = dataInputArray(continent);
+                dataContinents objContinent = new dataContinents(data_continents);
+                objContinent.printTotals();
+                JSONArray data_countries = dataInputArray(country);
+                dataCountries objCountry = new dataCountries(data_countries);
+                objCountry.printTotals();
             }
 
         } catch (Exception e) {
@@ -79,9 +85,7 @@ public class readData extends JFrame{
             file += scanner.next();
         }
         scanner.close();
-		JSONObject obj  =  (JSONObject) parser.parse(file);
-		JSONArray array = new JSONArray();
-		array.add(obj);
-		return (JSONArray)array;
+        JSONArray array = (JSONArray)parser.parse(file);
+        return array;
 	}
 }
