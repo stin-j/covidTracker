@@ -36,3 +36,6 @@ accounts for invalid inputs
 
 5/29
 (Justin) corrected package names that conflicted with import statements
+
+5/29
+(Alvin) Created a JFrame with buttons, currently only the "all" button works
