@@ -1,8 +1,8 @@
 /*
 WHAT THIS PROJECT IS
 =====================
-Uh it tracks COVID stuff yeah
-I'm too busy writing code to be writing this
+The program tracks COVID-19 statistics around the globe by pulling data off of a regularly updated API site with all the data.
+The user can search for specific states, countries, and continents to obtain case data from.
 
 Sources
 =======
