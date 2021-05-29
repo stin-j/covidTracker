@@ -17,19 +17,72 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class readData extends JFrame {
-	private JLabel status;
+import java.awt.event.*;
 
-//	public readData() {
+public class readData extends JFrame {
+	//private JLabel status;
+	private JPanel panel1;
+	private JPanel panel2;
+
+	public readData() {
 //		status = new JLabel("");
 //		add(status, BorderLayout.SOUTH);
 //		add(new dataDisplay(status));
 //		setResizable(false);
 //		pack();
-//		setTitle("COVID-19 Tracker");
+		setTitle("COVID-19 Tracker");
 //		setLocationRelativeTo(null);
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//	}
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(400,400);
+		panel1 = new JPanel();
+		panel2 = new JPanel();
+		panel1.setSize(400,400);
+		panel2.setSize(400,400);
+		JButton all = new JButton("All");
+		JButton states = new JButton("States");
+		JButton continents = new JButton("Continents");
+		JButton countries = new JButton("Countries");
+		JButton back = new JButton("Back");
+		JLabel allData1 = new JLabel("Total Cases: 170589442");
+		JLabel allData2 = new JLabel("New Cases Today: 465747");
+		JLabel allData3 = new JLabel("Total Deaths: 3547296");
+		JLabel allData4 = new JLabel("Deaths Today: 10127");
+		JLabel allData5 = new JLabel("Total Recovered: 170589442");
+		JLabel allData6 = new JLabel("New Recoveries Today: 621124");
+		JLabel allData7 = new JLabel("Current Active Cases: 14317533");
+		all.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+			}
+		});
+		back.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				panel2.setVisible(false);
+				panel1.setVisible(true);
+			}
+		});
+		//states.addActionListener(this);
+		//continents.addActionListener(this);
+		//countries.addActionListener(this);
+		panel1.add(all);
+		panel1.add(states);
+		panel1.add(continents);
+		panel1.add(countries);
+		panel1.setVisible(true);
+		panel2.add(back);
+		panel2.add(allData1);
+		panel2.add(allData2);
+		panel2.add(allData3);
+		panel2.add(allData4);
+		panel2.add(allData5);
+		panel2.add(allData6);
+		panel2.add(allData7);
+		panel2.setVisible(false);
+		add(panel1);
+		add(panel2);
+
+	}
 
 	public static void main(String[] args) throws IOException {
 		try {
@@ -126,7 +179,7 @@ public class readData extends JFrame {
 			e.printStackTrace();
 		}
 		readData ct = new readData();
-		//ct.setVisible(true);
+		ct.setVisible(true);
 	}
 
 	public static JSONObject dataInputObject(URL url) throws IOException, ParseException {
@@ -153,4 +206,5 @@ public class readData extends JFrame {
 		JSONArray array = (JSONArray) parser.parse(file);
 		return array;
 	}
+
 }
